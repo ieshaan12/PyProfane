@@ -44,7 +44,9 @@ def soundex(term: str) -> str:
     return sound
 
 def censorWord(word: str) -> str:
-
+    '''
+    Censor word.
+    '''
     term = list(word)
     length = len(term)
     if length <= 4:
@@ -58,6 +60,11 @@ def censorWord(word: str) -> str:
 
 
 def censorSentences(comments: List[str]) -> List[str]:
+    '''
+    Censor a list of sentences based on soundex values and set of characters.
+    Please note that this is my personal approach and based off no research as far as I am aware of.
+    Future: I feel Levenshtien distance can be used to exploit this further.
+    '''
 
     sentences = []
 
@@ -76,6 +83,9 @@ def censorSentences(comments: List[str]) -> List[str]:
     return sentences
 
 def updateSwearwords(filename: str) -> int:
+    '''
+    Update your swearwords based on your own text files
+    '''
 
     global profaneWordSoundex, profaneWordsSoundexValues, profaneWords
 
@@ -95,6 +105,9 @@ def updateSwearwords(filename: str) -> int:
     return 0
 
 def isProfane(sentence: str) -> bool:
+    '''
+    Function that returns if a sentence is profane or not.
+    '''
 
     allWords = re.findall(r"[\w']+|[.,!?;]", sentence)
     for j in allWords:
@@ -102,12 +115,15 @@ def isProfane(sentence: str) -> bool:
         if value in profaneWordsSoundexValues:
             keys = getAllKeysFromValues(profaneWordSoundex,value)
             for i in keys:
-                if set(j) ==  set(i):
+                if set(j) == set(i):
                     return True
     
     return False
 
 def getProfaneWords():
+    '''
+    Prints a list of current profane/swear words
+    '''
 
     if printVersion:
         pprint(profaneWords)
@@ -115,5 +131,9 @@ def getProfaneWords():
         print(profaneWords)
 
 def getAllKeysFromValues(mapping: dict, searchValue: str) -> List[str]:
+    '''
+    Helper function.
+    Future: can be moved into another file with the name helpers.py later
+    '''
 
     return [key for (key,value) in mapping.items() if value == searchValue]
