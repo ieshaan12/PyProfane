@@ -1,9 +1,12 @@
 *.csv
 *.ipynb
 *.zip
+*.txt
+data/comments.txt
+data/swearWords.txt
+data/test2.txt
 __pycache__/
 .vscode/
-data/test2.txt
 PyProfane/main.py
 PyProfane.egg-info
 dist/
