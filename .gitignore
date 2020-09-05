@@ -2,8 +2,7 @@
 __pycache__/
 csvData/
 dist/
-PyProfane.egg-info/
-PyProfane_v1.0.0.egg-info/
 *.zip
 PyProfane/main.py
 *.ipynb
+*.egg-info
