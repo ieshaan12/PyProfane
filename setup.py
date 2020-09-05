@@ -3,8 +3,8 @@ import setuptools
 with open("README.md", "r") as fileObj:
   longDescription = fileObj.read()
 
-setuptools.setup(name="PyProfane",
-  packages=['PyProfane'],
+setuptools.setup(name="PyProfane-v1.0.0",
+  packages=['PyProfane-v1.0.0'],
   version="1.0.0",
   author="Ieshaan Saxena",
   author_email="ieshaan1999@gmail.com",
