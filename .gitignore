@@ -1,0 +1,7 @@
+*.csv
+*.ipynb
+*.zip
+__pycache__/
+.vscode/
+data/test2.txt
+PyProfane/main.py
