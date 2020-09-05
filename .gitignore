@@ -1,6 +1,6 @@
 .vscode/
 __pycache__/
-data/
+csvData/
 dist/
 PyProfane.egg-info/
 PyProfane_v1.0.0.egg-info/
