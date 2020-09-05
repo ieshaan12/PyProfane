@@ -5,3 +5,5 @@ __pycache__/
 .vscode/
 data/test2.txt
 PyProfane/main.py
+PyProfane.egg-info
+dist/
