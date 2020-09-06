@@ -2,7 +2,9 @@
 __pycache__/
 csvData/
 dist/
+logs/
 *.zip
 PyProfane/main.py
 *.ipynb
 *.egg-info
+.pypirc

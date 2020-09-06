@@ -53,8 +53,8 @@ def censorWord(word: str) -> str:
         term[1] = censorSymbols[random.randint(0,censorSymbolsLength-1)]
     if length > 4:
         censorPositions = random.sample(range(1,length-2), length//2)
-        for i in censorPositions:
-            term[i] = censorSymbols[random.randint(0,censorSymbolsLength-1)]
+        for pos,i in enumerate(sorted(censorPositions)):
+            term[i] = censorSymbols[pos % 5]
     
     return ''.join(term)
 
@@ -90,6 +90,10 @@ def updateSwearwords(filename: str) -> int:
     global profaneWordSoundex, profaneWordsSoundexValues, profaneWords
 
     f = open(filename,'r')
+
+    if not f:
+        return -1
+
     words = f.read().splitlines()
     yourSoundex = dict()
 
