@@ -35,14 +35,17 @@ print(isProfane(sentence))  # returns True
 print(censorWord(word)) # returns 's%!$ty'
 
 print(censorSentences(sentences))
-#["you're a piece of s#it",
-# 'fucking w&!re',
-# 'why you such a c&m&%ut',
-# 'an online w%$re',
-# 'fucking w#$$er',
-# 'hey, hope you do great!',
-# 's#&t$#yyy w&o$%$ee',
-# 'wear a dress']
+'''
+returns
+["you're a piece of s#it",
+ 'fucking w&!re',
+ 'why you such a c&m&%ut',
+ 'an online w%$re',
+ 'fucking w#$$er',
+ 'hey, hope you do great!',
+ 's#&t$#yyy w&o$%$ee',
+ 'wear a dress']
+'''
 ```
 
 ### Data
