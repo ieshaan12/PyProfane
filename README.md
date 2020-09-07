@@ -1,5 +1,7 @@
 ## PyProfane
 
+[![Build Status](https://travis-ci.com/ieshaan12/PyProfane.svg?branch=master)](https://travis-ci.com/ieshaan12/PyProfane)
+
 ### Why I made this?
 
 I went through a few libraries for profane languages like `profanity`, `profanity-check` and `profanity-filter`. While they're all good in their own right, I couldn't find one that suited my needs. 
