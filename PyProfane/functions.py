@@ -86,7 +86,7 @@ def censorSentences(comments: List[str]) -> List[str]:
                             j, censorWord(j))
         sentences.append(soundexComment)
 
-    return sentences, profaneWords
+    return sentences
 
 
 def updateSwearwords(filename: str) -> int:

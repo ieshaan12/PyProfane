@@ -1,4 +1,5 @@
 from PyProfane.functions import isProfane, censorWord, censorSentences
+from PyProfane.constants import profaneWords
 import unittest
 
 
@@ -18,10 +19,10 @@ class Testclass(unittest.TestCase):
     def testCensorSentences(self):
         fileObj = open('PyProfane/data/comments.txt', 'r')
         comments = fileObj.read().splitlines()
+        censored = censorSentences(comments)
 
-        self.assertNotEqual(comments, censorSentences(comments))
+        self.assertNotEqual(comments, censored)
 
-    def testFucking(self):
-        comment = 'fuckinggg'
+    def testProfaneWords(self):
 
-        self.assertNotEqual(censorSentences([comment]), comment)
+        self.assertEqual(len(profaneWords), 99)

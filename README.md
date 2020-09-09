@@ -39,13 +39,13 @@ print(censorWord(word)) # returns 's%!$ty'
 print(censorSentences(sentences))
 '''
 returns
-["you're a piece of s#it",
- 'fucking w&!re',
- 'why you such a c&m&%ut',
- 'an online w%$re',
- 'fucking w#$$er',
+["you're a piece of s!it",
+ 'f#%$ing w#%re',
+ 'why you such a cu#%$ut',
+ 'an online w#%re',
+ 'fu#%$ng w#%$er',
  'hey, hope you do great!',
- 's#&t$#yyy w&o$%$ee',
+ 's#ut%$!yy w#o%$!ee',
  'wear a dress']
 '''
 ```
