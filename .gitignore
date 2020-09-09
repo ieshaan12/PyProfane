@@ -3,6 +3,7 @@ __pycache__/
 csvData/
 dist/
 logs/
+.pytest_cache/
 *.zip
 PyProfane/main.py
 *.ipynb

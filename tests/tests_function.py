@@ -10,7 +10,7 @@ def testIsProfane():
     assert isProfane(sentence2) == False
 
 def testCensorWord():
-    word = "sluttyyy"
+    word = "fuckinggg"
 
     assert censorWord(word) != word
 

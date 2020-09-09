@@ -58,7 +58,6 @@ def censorWord(word: str) -> str:
     
     return ''.join(term)
 
-
 def censorSentences(comments: List[str]) -> List[str]:
     '''
     Censor a list of sentences based on soundex values and set of characters.
@@ -80,7 +79,7 @@ def censorSentences(comments: List[str]) -> List[str]:
                         soundexComment = soundexComment.replace(j,censorWord(j))
         sentences.append(soundexComment)
 
-    return sentences
+    return sentences, profaneWords
 
 def updateSwearwords(filename: str) -> int:
     '''
