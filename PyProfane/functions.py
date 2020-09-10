@@ -4,11 +4,6 @@ from PyProfane.constants import censorSymbols, censorSymbolsLength, \
 from typing import List
 import re
 import random
-try:
-    from pprint import pprint
-    printVersion = 1
-except ImportError:
-    printVersion = 0
 
 
 def soundex(term: str) -> str:
@@ -96,9 +91,10 @@ def updateSwearwords(filename: str) -> int:
 
     global profaneWordSoundex, profaneWordsSoundexValues, profaneWords
 
-    f = open(filename, 'r')
-
-    if not f:
+    try:
+        f = open(filename, 'r')
+    except FileNotFoundError:
+        print('This file: {} doesn\'t exist'.format(filename))
         return -1
 
     words = f.read().splitlines()
@@ -133,15 +129,12 @@ def isProfane(sentence: str) -> bool:
     return False
 
 
-def getProfaneWords():
+def getProfaneWords() -> List[str]:
     '''
     Prints a list of current profane/swear words
     '''
 
-    if printVersion:
-        pprint(profaneWords)
-    else:
-        print(profaneWords)
+    return list(profaneWords)
 
 
 def getAllKeysFromValues(mapping: dict, searchValue: str) -> List[str]:

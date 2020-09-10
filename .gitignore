@@ -8,4 +8,4 @@ logs/
 PyProfane/main.py
 *.ipynb
 *.egg-info
-.pypirc
+temporary.py
