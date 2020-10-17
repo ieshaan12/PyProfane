@@ -155,3 +155,12 @@ profaneWords = {
     'hell', 'anal', 'poop', 'arse', 'cock', 'balls', 'asswhore', 'fag',
     'bullshit'
 }
+
+profaneSubstitutes = {
+    '1': 'i',
+    '$': 's',
+    '@': 'a',
+    '3': 'e',
+    '0': 'o',
+    '5': 's'
+}

@@ -1,8 +1,10 @@
 .vscode/
+.idea/
 __pycache__/
 csvData/
 dist/
 logs/
+venv/
 .pytest_cache/
 *.zip
 PyProfane/main.py

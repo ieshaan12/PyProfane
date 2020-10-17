@@ -1,6 +1,6 @@
 from PyProfane.constants import censorSymbols, censorSymbolsLength, \
     letterMappings, lettersToRemove, profaneWordSoundex, \
-    profaneWordsSoundexValues, profaneWords
+    profaneWordsSoundexValues, profaneWords, profaneSubstitutes
 from typing import List
 import re
 import random
@@ -42,10 +42,40 @@ def soundex(term: str) -> str:
     return sound
 
 
+def replaceSubstitutes(sentence: str) -> str:
+    '''
+    Replace commonly used substitutes by their corresponding letters
+    '''
+
+    subChars = ''
+    for char in profaneSubstitutes:
+        subChars += char
+    allWords = re.findall(r"[\w'{}]+|[\W]".format(subChars),
+                          sentence
+                          )
+    translatedSentence = ''
+    for word in allWords:
+        translatedWord = ''
+        for char in word:
+            if char in profaneSubstitutes:
+                translatedWord += profaneSubstitutes[char]
+            else:
+                translatedWord += char
+
+        if isProfane(translatedWord):
+            translatedSentence += translatedWord
+        else:
+            translatedSentence += word
+
+    return translatedSentence
+
+
 def censorWord(word: str) -> str:
     '''
     Censor word.
     '''
+    word = replaceSubstitutes(word)
+
     term = list(word)
     length = len(term)
     if length <= 4:
@@ -67,6 +97,7 @@ def censorSentences(comments: List[str]) -> List[str]:
     '''
 
     sentences = []
+    comments = [replaceSubstitutes(comment) for comment in comments]
 
     for i in comments:
         soundexComment = i
