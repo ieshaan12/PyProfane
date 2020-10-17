@@ -47,9 +47,27 @@ def replaceSubstitutes(sentence: str) -> str:
     Replace commonly used substitutes by their corresponding letters
     '''
 
+    subChars = ''
     for char in profaneSubstitutes:
-        sentence = sentence.replace(char, profaneSubstitutes[char])
-    return sentence
+        subChars += char
+    allWords = re.findall(r"[\w'{}]+|[\W]".format(subChars),
+                          sentence
+                          )
+    translatedSentence = ''
+    for word in allWords:
+        translatedWord = ''
+        for char in word:
+            if char in profaneSubstitutes:
+                translatedWord += profaneSubstitutes[char]
+            else:
+                translatedWord += char
+
+        if isProfane(translatedWord):
+            translatedSentence += translatedWord
+        else:
+            translatedSentence += word
+
+    return translatedSentence
 
 
 def censorWord(word: str) -> str:
@@ -129,8 +147,6 @@ def isProfane(sentence: str) -> bool:
     '''
     Function that returns if a sentence is profane or not.
     '''
-
-    sentence = replaceSubstitutes(sentence)
 
     allWords = re.findall(r"[\w']+|[.,!?;]", sentence)
     for j in allWords:

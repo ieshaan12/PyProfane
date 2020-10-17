@@ -13,16 +13,16 @@ class Testclass(unittest.TestCase):
     def testIsProfane(self):
         sentence1 = "fucking wanker"
         sentence2 = "hey, hope you do great!"
-        sentence3 = "$h1t man, what a b1tch"
 
         self.assertTrue(isProfane(sentence1))
         self.assertFalse(isProfane(sentence2))
-        self.assertTrue(isProfane(sentence3))
 
     def testReplaceSubstitutes(self):
-        word = "n1gg@"
+        word1 = "n1gg@"
+        word2 = "10$"
 
-        self.assertEqual(replaceSubstitutes(word), 'nigga')
+        self.assertEqual(replaceSubstitutes(word1), 'nigga')
+        self.assertEqual(replaceSubstitutes(word2), '10$')
 
     def testCensorWord(self):
         word1 = "fuckinggg"
